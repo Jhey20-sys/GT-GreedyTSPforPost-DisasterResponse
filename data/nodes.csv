@@ -1,0 +1,11 @@
+index,name,category,lat,lon,assumed_damage_min,osm_node,snap_distance_m
+0,Cagayan de Oro City Hall (DEPOT),depot,8.47695,124.64117,0,3426477254,89
+1,Northern Mindanao Medical Center,hospital,8.48539,124.64964,0,8794073827,81
+2,J. R. Borja Memorial City Hospital,hospital,8.48171,124.62809,5,1912489792,82
+3,Capitol University Hospital,hospital,8.47905,124.67268,0,2153824572,87
+4,Maria Reyna-Xavier Univ. Hospital,hospital,8.47631,124.6552,0,8076841532,37
+5,Balulang Elementary School (evac),evac,8.44344,124.63451,20,2560808491,77
+6,Macasandig Multipurpose Covered Court,evac,8.46535,124.64478,20,1026117799,37
+7,Carmen National High School (evac),evac,8.4695,124.63234,5,3678486385,45
+8,West City Central School (evac),evac,8.4735,124.63686,5,1912515863,59
+9,Philippine Red Cross - CDO Chapter,emergency,8.48477,124.64926,0,369674369,127
