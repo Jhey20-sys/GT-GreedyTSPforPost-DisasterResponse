@@ -2,6 +2,10 @@
 
 A real-life **Traveling Salesperson Problem (TSP)** solved with **Algorithm 2.7, the Greedy (Nearest-Neighbor) approach**, from Luna-Garcia, Candano & Caga-anan (2024). The travel times come from the real **OpenStreetMap** road network.
 
+**Group members:** Gerlie Campion, Francis Esteban, Jhey Gulde, Kathleen Gultiano, John Carl Ramirez. University of Science and Technology of Southern Philippines.
+
+The full write-up is in [`report/report.pdf`](report/report.pdf).
+
 ![Greedy tour on the real Cagayan de Oro road network](figures/4_greedy_route_map.png)
 
 ## Problem
@@ -91,6 +95,7 @@ python tsp_graph_visualization.py   # figures/*.png
 | `data/distance_osm_km.csv` | 10 × 10 road-distance matrix (km) |
 | `data/cdo_drive.graphml` | Saved Cagayan de Oro drivable road network |
 | `figures/` | Graph model, greedy tour, weight matrices, route maps |
+| `report/` | LaTeX source and compiled PDF of the full project report |
 
 ## Limitations
 
