@@ -1,0 +1,172 @@
+% Generated from the project dataset by make_report_tables.py -- do not edit by hand.
+\newcommand{\SitesTable}{
+\begin{table}[H]\centering\small
+\caption{The ten vertices: real coordinates (OpenStreetMap), assumed damage class, and distance to the nearest road intersection.}\label{tab:sites}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{clllrrr}
+\toprule
+\# & Site & Category & Latitude & Longitude & $d_i$ (min) & Snap (m) \\
+\midrule
+0 & Cagayan de Oro City Hall & Depot & 8.47695 & 124.64117 & 0 & 89 \\
+1 & Northern Mindanao Medical Center & Hospital & 8.48539 & 124.64964 & 0 & 81 \\
+2 & J. R. Borja Memorial City Hospital & Hospital & 8.48171 & 124.62809 & 5 & 82 \\
+3 & Capitol University Hospital & Hospital & 8.47905 & 124.67268 & 0 & 87 \\
+4 & Maria Reyna--Xavier University Hospital & Hospital & 8.47631 & 124.65520 & 0 & 37 \\
+5 & Balulang Elementary School & Evacuation & 8.44344 & 124.63451 & 20 & 77 \\
+6 & Macasandig Multipurpose Covered Court & Evacuation & 8.46535 & 124.64478 & 20 & 37 \\
+7 & Carmen National High School & Evacuation & 8.46950 & 124.63234 & 5 & 45 \\
+8 & West City Central School & Evacuation & 8.47350 & 124.63686 & 5 & 59 \\
+9 & Philippine Red Cross -- CDO Chapter & Response hub & 8.48477 & 124.64926 & 0 & 127 \\
+\bottomrule
+\end{tabular}
+\end{table}}
+\newcommand{\TravelMatrix}{\begin{table}[H]\centering\small
+\caption{Actual travel-time matrix $t(i,j)$ in minutes: fastest path on the OpenStreetMap drive network (row = from, column = to).}\label{tab:travel}
+\begin{tabular}{c|rrrrrrrrrr}
+\toprule
+from $\backslash$ to & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\
+\midrule
+\textbf{0} & -- & 2.5 & 3.4 & 6.4 & 3.3 & 9.7 & 3.3 & 3.3 & 1.6 & 2.6 \\
+\textbf{1} & 2.8 & -- & 5.5 & 3.9 & 3.3 & 12.1 & 5.2 & 6.0 & 4.4 & 0.7 \\
+\textbf{2} & 3.4 & 5.2 & -- & 9.1 & 6.4 & 11.2 & 6.1 & 4.7 & 3.4 & 5.6 \\
+\textbf{3} & 6.4 & 4.0 & 9.1 & -- & 5.0 & 15.7 & 8.8 & 9.6 & 8.0 & 4.3 \\
+\textbf{4} & 3.3 & 3.4 & 6.5 & 5.0 & -- & 12.5 & 4.7 & 6.5 & 4.9 & 3.0 \\
+\textbf{5} & 9.7 & 11.8 & 11.2 & 15.7 & 12.1 & -- & 8.5 & 7.2 & 9.1 & 11.9 \\
+\textbf{6} & 3.5 & 5.1 & 6.5 & 8.9 & 4.5 & 8.5 & -- & 5.3 & 4.2 & 4.9 \\
+\textbf{7} & 3.3 & 5.6 & 4.7 & 9.6 & 6.5 & 7.2 & 4.7 & -- & 2.6 & 5.8 \\
+\textbf{8} & 1.6 & 4.0 & 3.4 & 7.9 & 4.9 & 9.1 & 3.7 & 2.7 & -- & 4.1 \\
+\textbf{9} & 2.6 & 0.8 & 5.6 & 4.3 & 3.0 & 11.9 & 4.8 & 5.8 & 4.1 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+}
+\newcommand{\DistanceMatrix}{\begin{table}[H]\centering\small
+\caption{Road distance in kilometres along the same fastest paths.}\label{tab:distance}
+\begin{tabular}{c|rrrrrrrrrr}
+\toprule
+from $\backslash$ to & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\
+\midrule
+\textbf{0} & -- & 1.59 & 1.74 & 4.22 & 1.76 & 5.00 & 1.65 & 1.86 & 0.89 & 1.55 \\
+\textbf{1} & 1.82 & -- & 3.35 & 2.63 & 1.75 & 6.82 & 3.00 & 3.70 & 2.73 & 0.37 \\
+\textbf{2} & 1.75 & 3.10 & -- & 5.73 & 3.17 & 5.40 & 3.04 & 2.25 & 1.62 & 2.94 \\
+\textbf{3} & 4.22 & 2.67 & 5.74 & -- & 2.84 & 9.21 & 5.40 & 6.10 & 5.13 & 2.79 \\
+\textbf{4} & 1.76 & 1.82 & 3.18 & 2.84 & -- & 6.58 & 2.29 & 3.64 & 2.67 & 1.48 \\
+\textbf{5} & 5.00 & 6.57 & 5.39 & 9.20 & 6.40 & -- & 4.56 & 3.39 & 4.43 & 6.53 \\
+\textbf{6} & 1.64 & 2.79 & 3.29 & 4.98 & 2.15 & 4.03 & -- & 2.53 & 1.95 & 2.37 \\
+\textbf{7} & 1.86 & 3.45 & 2.25 & 6.08 & 3.62 & 3.39 & 2.32 & -- & 1.28 & 3.41 \\
+\textbf{8} & 0.90 & 2.50 & 1.62 & 5.13 & 2.67 & 4.45 & 1.76 & 1.30 & -- & 2.46 \\
+\textbf{9} & 1.54 & 0.43 & 2.94 & 2.78 & 1.48 & 6.53 & 2.37 & 3.42 & 2.45 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+}
+\newcommand{\ClearingMatrix}{\begin{table}[H]\centering\small
+\caption{Assumed clearing-time matrix $c(i,j)=\max(d_i,d_j)$ in minutes.}\label{tab:clearing}
+\begin{tabular}{c|rrrrrrrrrr}
+\toprule
+from $\backslash$ to & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\
+\midrule
+\textbf{0} & -- & 0 & 5 & 0 & 0 & 20 & 20 & 5 & 5 & 0 \\
+\textbf{1} & 0 & -- & 5 & 0 & 0 & 20 & 20 & 5 & 5 & 0 \\
+\textbf{2} & 5 & 5 & -- & 5 & 5 & 20 & 20 & 5 & 5 & 5 \\
+\textbf{3} & 0 & 0 & 5 & -- & 0 & 20 & 20 & 5 & 5 & 0 \\
+\textbf{4} & 0 & 0 & 5 & 0 & -- & 20 & 20 & 5 & 5 & 0 \\
+\textbf{5} & 20 & 20 & 20 & 20 & 20 & -- & 20 & 20 & 20 & 20 \\
+\textbf{6} & 20 & 20 & 20 & 20 & 20 & 20 & -- & 20 & 20 & 20 \\
+\textbf{7} & 5 & 5 & 5 & 5 & 5 & 20 & 20 & -- & 5 & 5 \\
+\textbf{8} & 5 & 5 & 5 & 5 & 5 & 20 & 20 & 5 & -- & 5 \\
+\textbf{9} & 0 & 0 & 5 & 0 & 0 & 20 & 20 & 5 & 5 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+}
+\newcommand{\WeightMatrix}{\begin{table}[H]\centering\small
+\caption{Combined weight matrix $w(i,j)=t(i,j)+c(i,j)$ in minutes, used by Algorithm 2.7.}\label{tab:weights}
+\begin{tabular}{c|rrrrrrrrrr}
+\toprule
+from $\backslash$ to & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\
+\midrule
+\textbf{0} & -- & 2.5 & 8.4 & 6.4 & 3.3 & 29.7 & 23.3 & 8.3 & 6.6 & 2.6 \\
+\textbf{1} & 2.8 & -- & 10.5 & 3.9 & 3.3 & 32.1 & 25.2 & 11.0 & 9.4 & 0.7 \\
+\textbf{2} & 8.4 & 10.2 & -- & 14.1 & 11.4 & 31.2 & 26.1 & 9.7 & 8.4 & 10.6 \\
+\textbf{3} & 6.4 & 4.0 & 14.1 & -- & 5.0 & 35.7 & 28.8 & 14.6 & 13.0 & 4.3 \\
+\textbf{4} & 3.3 & 3.4 & 11.5 & 5.0 & -- & 32.5 & 24.7 & 11.5 & 9.9 & 3.0 \\
+\textbf{5} & 29.7 & 31.8 & 31.2 & 35.7 & 32.1 & -- & 28.5 & 27.2 & 29.1 & 31.9 \\
+\textbf{6} & 23.5 & 25.1 & 26.5 & 28.9 & 24.5 & 28.5 & -- & 25.3 & 24.2 & 24.9 \\
+\textbf{7} & 8.3 & 10.6 & 9.7 & 14.6 & 11.5 & 27.2 & 24.7 & -- & 7.6 & 10.8 \\
+\textbf{8} & 6.6 & 9.0 & 8.4 & 12.9 & 9.9 & 29.1 & 23.7 & 7.7 & -- & 9.1 \\
+\textbf{9} & 2.6 & 0.8 & 10.6 & 4.3 & 3.0 & 31.9 & 24.8 & 10.8 & 9.1 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+}
+\newcommand{\StepTable}{
+\begin{table}[H]\centering\small
+\caption{Trace of Algorithm 2.7 from the depot. At each step the three nearest unvisited sites are listed as \emph{site: $w$}; the smallest is chosen.}\label{tab:steps}
+\begin{tabular}{clp{5.2cm}rrrr}
+\toprule
+Step & Leg & Nearest unvisited candidates & $t$ & $c$ & $w$ & Running total \\
+\midrule
+1 & 0 $\to$ 1 & 1: 2.5, 9: 2.6, 4: 3.3 & 2.5 & 0 & \textbf{2.5} & 2.5 \\
+2 & 1 $\to$ 9 & 9: 0.7, 4: 3.3, 3: 3.9 & 0.7 & 0 & \textbf{0.7} & 3.2 \\
+3 & 9 $\to$ 4 & 4: 3.0, 3: 4.3, 8: 9.1 & 3.0 & 0 & \textbf{3.0} & 6.2 \\
+4 & 4 $\to$ 3 & 3: 5.0, 8: 9.9, 2: 11.5 & 5.0 & 0 & \textbf{5.0} & 11.2 \\
+5 & 3 $\to$ 8 & 8: 13.0, 2: 14.1, 7: 14.6 & 8.0 & 5 & \textbf{13.0} & 24.2 \\
+6 & 8 $\to$ 7 & 7: 7.7, 2: 8.4, 6: 23.7 & 2.7 & 5 & \textbf{7.7} & 31.9 \\
+7 & 7 $\to$ 2 & 2: 9.7, 6: 24.7, 5: 27.2 & 4.7 & 5 & \textbf{9.7} & 41.6 \\
+8 & 2 $\to$ 6 & 6: 26.1, 5: 31.2 & 6.1 & 20 & \textbf{26.1} & 67.7 \\
+9 & 6 $\to$ 5 & 5: 28.5 & 8.5 & 20 & \textbf{28.5} & 96.2 \\
+10 & 5 $\to$ 0 & return to depot & 9.7 & 20 & \textbf{29.7} & 125.9 \\
+\bottomrule
+\end{tabular}
+\end{table}}
+\newcommand{\SensitivityTable}{
+\begin{table}[H]\centering\small
+\caption{Greedy result when started from each site. Every closed tour is a cycle, so its total is also a valid depot round trip.}\label{tab:sensitivity}
+\begin{tabular}{cllr}
+\toprule
+Start & Site & Greedy tour & Total (min) \\
+\midrule
+0 & City Hall & 0 $\to$ 1 $\to$ 9 $\to$ 4 $\to$ 3 $\to$ 8 $\to$ 7 $\to$ 2 $\to$ 6 $\to$ 5 $\to$ 0 & 125.9 \\
+1 & NMMC & 1 $\to$ 9 $\to$ 0 $\to$ 4 $\to$ 3 $\to$ 8 $\to$ 7 $\to$ 2 $\to$ 6 $\to$ 5 $\to$ 1 & 128.4 \\
+2 & J.R. Borja & 2 $\to$ 0 $\to$ 1 $\to$ 9 $\to$ 4 $\to$ 3 $\to$ 8 $\to$ 7 $\to$ 6 $\to$ 5 $\to$ 2 & 124.7 \\
+3 & Capitol Univ. & 3 $\to$ 1 $\to$ 9 $\to$ 0 $\to$ 4 $\to$ 8 $\to$ 7 $\to$ 2 $\to$ 6 $\to$ 5 $\to$ 3 & 128.2 \\
+4 & Maria Reyna & 4 $\to$ 9 $\to$ 1 $\to$ 0 $\to$ 3 $\to$ 8 $\to$ 7 $\to$ 2 $\to$ 6 $\to$ 5 $\to$ 4 & 130.1 \\
+5 & Balulang ES & 5 $\to$ 7 $\to$ 8 $\to$ 0 $\to$ 1 $\to$ 9 $\to$ 4 $\to$ 3 $\to$ 2 $\to$ 6 $\to$ 5 & 121.3 \\
+6 & Macasandig CC & 6 $\to$ 0 $\to$ 1 $\to$ 9 $\to$ 4 $\to$ 3 $\to$ 8 $\to$ 7 $\to$ 2 $\to$ 5 $\to$ 6 & 124.8 \\
+7 & Carmen NHS & 7 $\to$ 8 $\to$ 0 $\to$ 1 $\to$ 9 $\to$ 4 $\to$ 3 $\to$ 2 $\to$ 6 $\to$ 5 $\to$ 7 & 121.3 \\
+8 & West City CS & 8 $\to$ 0 $\to$ 1 $\to$ 9 $\to$ 4 $\to$ 3 $\to$ 2 $\to$ 7 $\to$ 6 $\to$ 5 $\to$ 8 & 123.9 \\
+9 & Red Cross & 9 $\to$ 1 $\to$ 0 $\to$ 4 $\to$ 3 $\to$ 8 $\to$ 7 $\to$ 2 $\to$ 6 $\to$ 5 $\to$ 9 & 128.8 \\
+\bottomrule
+\end{tabular}
+\end{table}}
+\newcommand{\OptimalTable}{
+\begin{table}[H]\centering\small
+\caption{Exact optimal tour (Held--Karp dynamic programming), leg by leg.}\label{tab:optimal}
+\begin{tabular}{cllrrr}
+\toprule
+Leg & Sites & $t$ & $c$ & $w$ & Running total \\
+\midrule
+0 $\to$ 2 & City Hall $\to$ J.R. Borja & 3.4 & 5 & 8.4 & 8.4 \\
+2 $\to$ 8 & J.R. Borja $\to$ West City CS & 3.4 & 5 & 8.4 & 16.8 \\
+8 $\to$ 7 & West City CS $\to$ Carmen NHS & 2.7 & 5 & 7.7 & 24.5 \\
+7 $\to$ 5 & Carmen NHS $\to$ Balulang ES & 7.2 & 20 & 27.2 & 51.7 \\
+5 $\to$ 6 & Balulang ES $\to$ Macasandig CC & 8.5 & 20 & 28.5 & 80.2 \\
+6 $\to$ 4 & Macasandig CC $\to$ Maria Reyna & 4.5 & 20 & 24.5 & 104.7 \\
+4 $\to$ 3 & Maria Reyna $\to$ Capitol Univ. & 5.0 & 0 & 5.0 & 109.7 \\
+3 $\to$ 1 & Capitol Univ. $\to$ NMMC & 4.0 & 0 & 4.0 & 113.7 \\
+1 $\to$ 9 & NMMC $\to$ Red Cross & 0.7 & 0 & 0.7 & 114.4 \\
+9 $\to$ 0 & Red Cross $\to$ City Hall & 2.6 & 0 & 2.6 & 117.0 \\
+\bottomrule
+\end{tabular}
+\end{table}}
+\newcommand{\GreedyTotal}{125.9}
+\newcommand{\GreedyTravel}{50.9}
+\newcommand{\GreedyClear}{75}
+\newcommand{\GreedyKm}{27.03}
+\newcommand{\OptTotal}{117.0}
+\newcommand{\OptTravel}{42.0}
+\newcommand{\OptClear}{75}
+\newcommand{\OptKm}{22.18}
+\newcommand{\GapPct}{7.6}
+\newcommand{\GapMin}{8.9}

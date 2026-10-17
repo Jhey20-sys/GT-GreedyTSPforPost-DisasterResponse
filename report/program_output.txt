@@ -1,0 +1,58 @@
+============================================================================================
+ALGORITHM 2.7 - GREEDY (NEAREST-NEIGHBOR) APPROACH FOR TSP
+Application: Post-disaster emergency routing, Cagayan de Oro City (OpenStreetMap roads)
+============================================================================================
+
+Tour sequence:
+  Step  0: [0] Cagayan de Oro City Hall (DEPOT)
+  Step  1: [1] Northern Mindanao Medical Center
+  Step  2: [9] Philippine Red Cross - CDO Chapter
+  Step  3: [4] Maria Reyna-Xavier Univ. Hospital
+  Step  4: [3] Capitol University Hospital
+  Step  5: [8] West City Central School (evac)
+  Step  6: [7] Carmen National High School (evac)
+  Step  7: [2] J. R. Borja Memorial City Hospital
+  Step  8: [6] Macasandig Multipurpose Covered Court
+  Step  9: [5] Balulang Elementary School (evac)
+  Step 10: [0] Cagayan de Oro City Hall (DEPOT)  (return)
+
+Edge-by-edge breakdown (minutes):
+  From                                   To                                     travel clear      w
+  Cagayan de Oro City Hall (DEPOT)       Northern Mindanao Medical Center          2.5     0    2.5
+  Northern Mindanao Medical Center       Philippine Red Cross - CDO Chapter        0.7     0    0.7
+  Philippine Red Cross - CDO Chapter     Maria Reyna-Xavier Univ. Hospital         3.0     0    3.0
+  Maria Reyna-Xavier Univ. Hospital      Capitol University Hospital               5.0     0    5.0
+  Capitol University Hospital            West City Central School (evac)           8.0     5   13.0
+  West City Central School (evac)        Carmen National High School (evac)        2.7     5    7.7
+  Carmen National High School (evac)     J. R. Borja Memorial City Hospital        4.7     5    9.7
+  J. R. Borja Memorial City Hospital     Macasandig Multipurpose Covered Court     6.1    20   26.1
+  Macasandig Multipurpose Covered Court  Balulang Elementary School (evac)         8.5    20   28.5
+  Balulang Elementary School (evac)      Cagayan de Oro City Hall (DEPOT)          9.7    20   29.7
+
+Verification:
+  Every node visited exactly once : True
+  Returns to starting node        : True
+  Reported total time             : 125.9 minutes
+  Recomputed total time           : 125.9 minutes
+
+Conclusion:
+  Greedy produces an APPROXIMATE (heuristic) solution.
+  It does NOT guarantee the global optimum - see paper Theorem 2.7.
+============================================================================================
+
+Sensitivity to starting city (greedy from each node):
+  start = 0 (Cagayan de Oro City Hall (DEPOT)    ) -> total = 125.9 min
+  start = 1 (Northern Mindanao Medical Center    ) -> total = 128.4 min
+  start = 2 (J. R. Borja Memorial City Hospital  ) -> total = 124.7 min
+  start = 3 (Capitol University Hospital         ) -> total = 128.2 min
+  start = 4 (Maria Reyna-Xavier Univ. Hospital   ) -> total = 130.1 min
+  start = 5 (Balulang Elementary School (evac)   ) -> total = 121.3 min
+  start = 6 (Macasandig Multipurpose Covered Cour) -> total = 124.8 min
+  start = 7 (Carmen National High School (evac)  ) -> total = 121.3 min
+  start = 8 (West City Central School (evac)     ) -> total = 123.9 min
+  start = 9 (Philippine Red Cross - CDO Chapter  ) -> total = 128.8 min
+
+Optimality check (exact Held-Karp DP, paper Algorithm 2.2):
+  Optimal tour : 0 -> 2 -> 8 -> 7 -> 5 -> 6 -> 4 -> 3 -> 1 -> 9 -> 0
+  Optimal total: 117.0 min   (recomputed 117.0)
+  Greedy total : 125.9 min   -> greedy is 7.6% above optimal
